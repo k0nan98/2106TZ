@@ -23,6 +23,7 @@ public class Spawner : MonoBehaviour
         {
             GameObject newMutant = Instantiate(Parent, hit.point, Mutant.transform.rotation);
             newMutant.GetComponent<Collider>().enabled = true;
+            newMutant.GetComponent<Mutant_AI>().hpBar.enabled = true;
             newMutant.GetComponent<Mutant_AI>().startHealth = hp;
         }
 

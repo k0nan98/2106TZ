@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     }
     public void Die()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         dieCanvas.gameObject.SetActive(true);
         StopMoving();
         this.GetComponent<Animator>().SetTrigger("Die");

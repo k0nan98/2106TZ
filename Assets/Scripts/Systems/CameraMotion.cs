@@ -14,6 +14,8 @@ public class CameraMotion : MonoBehaviour
     {
         if(distance == 0)
         distance = this.transform.localPosition.z;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
