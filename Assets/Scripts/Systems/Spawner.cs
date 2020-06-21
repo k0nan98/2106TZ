@@ -15,10 +15,9 @@ public class Spawner : MonoBehaviour
         float mutant_z = Random.Range(player.transform.position.z - currentLevel.spawnRadius, player.transform.position.z + currentLevel.spawnRadius);
 
         
-        GameObject spawner = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        spawner.transform.position = new Vector3(mutant_x, 100, mutant_z);
+        Vector3 spawner = new Vector3(mutant_x, 100, mutant_z);
         RaycastHit hit = new RaycastHit();
-        Physics.Raycast(spawner.transform.position, Vector3.down, out hit);
+        Physics.Raycast(spawner, Vector3.down, out hit);
         if(hit.collider.transform.name == "Terrain")
         {
             GameObject newMutant = Instantiate(Parent, hit.point, Mutant.transform.rotation);
